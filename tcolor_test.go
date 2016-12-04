@@ -12,4 +12,9 @@ func TestColor(t *testing.T) {
 	fmt.Println(Colorize("Background grayscale test", DefaultColor().BackgroundGray(5)))
 	fmt.Println(Colorize("Standard color test", DefaultColor().Foreground(Red).Background(Blue)))
 	fmt.Println(Colorize("Standard bright color test", DefaultColor().Foreground(BrightRed).Background(BrightBlue)))
+
+	ColorOn = false
+	fmt.Println(Colorize("Color is off", DefaultColor().Foreground(Red).Underline()))
+	ColorOn = true
+	fmt.Println(Colorize("Color is on", DefaultColor().Foreground(Red).Underline()))
 }
