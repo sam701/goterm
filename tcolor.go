@@ -35,7 +35,7 @@ func Colorize(s string, color Color) string {
 
 type Color string
 
-func DefaultColor() Color {
+func New() Color {
 	return Color("")
 }
 
