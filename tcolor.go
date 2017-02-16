@@ -107,3 +107,7 @@ func (c Color) Italic() Color {
 func (c Color) Underline() Color {
 	return c.append("4")
 }
+
+func (c Color) Negative() Color {
+	return c.append("7")
+}
