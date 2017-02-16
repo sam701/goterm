@@ -1,7 +1,12 @@
 package tcolor
 
-import "log"
-import "strconv"
+import (
+	"log"
+	"os"
+	"strconv"
+
+	"golang.org/x/crypto/ssh/terminal"
+)
 
 const Reset Color = "0"
 
@@ -25,7 +30,7 @@ const (
 )
 
 // ColorOn enables colorization.
-var ColorOn = true
+var ColorOn = terminal.IsTerminal(int(os.Stdout.Fd()))
 
 // Colorize returns the given string into the specified color.
 // Colorize prepends the color sequence to the string and appends the reset color sequence.
